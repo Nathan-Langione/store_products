@@ -7,8 +7,11 @@ class Store:
         self.products.append(new_product)
         return self
 
-    def sell_product(self, sold_product):
-        self.products.remove(sold_product)
+    def sell_product(self, id):
+        for i in range(len(self.products)-1):
+            print(self.products[i].id)
+            if self.products[i].id == id:
+                self.products.remove(self.products[i])
         return self
     
     def list_products(self):
@@ -80,10 +83,13 @@ stockyard.sell_product(cow)
 stockyard.inflation(0.15)
 #stockyard.list_products()
 stockyard.set_clearance("animal",0.10)
+stockyard.sell_product(3)
 stockyard.list_products()
+
 
 """ #best buy interaction
 best_buy.add_product(tv).add_product(dvd)
 best_buy.list_products()
  """
+
 
